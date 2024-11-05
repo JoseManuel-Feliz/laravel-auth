@@ -6,6 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/app.scss',
+                'resources/scss/app.scss',
                 'resources/js/app.js',
             ],
             refresh: true,
@@ -13,7 +14,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '~resorces': '/resources/'
+            '~resources': '/resources/'
         }
     }
 });
