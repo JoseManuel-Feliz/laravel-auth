@@ -34,7 +34,7 @@
                 <td>{{$project->project_start_date}}</td>
                 <td>{{Str::words($project->description,3,'...')}}</td>
                 <td><a class="btn btn-secondary" href="{{route('Admin.projects.show',$project->id)}}">show</a></td>
-                <td><a class="btn btn-warning" href="#">edit</a></td>
+                <td><a class="btn btn-warning" href="{{route('Admin.projects.edit',$project->id)}}">edit</a></td>
                 <td>
                     <form action="#" method="POST">
                         @csrf
