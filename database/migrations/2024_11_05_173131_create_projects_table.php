@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('title', 40)->nullable(false);
             $table->boolean('status')->default(0)->nullable(false);
-            $table->date('Project_start _date')->nullable(false);
+            $table->date('Project_start_date')->nullable(false);
             $table->text('description')->nullable(true);
             $table->timestamps();
         });
