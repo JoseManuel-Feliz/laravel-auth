@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/projects', [AdminProjectController::class, 'index'])->name('Admin.projects.index');
+Route::get('/admin/projects/create', [AdminProjectController::class, 'create'])->name('Admin.projects.create');
 Route::get('/admin/projects/{id}', [AdminProjectController::class, 'show'])->name('Admin.projects.show');
 Auth::routes();
 
