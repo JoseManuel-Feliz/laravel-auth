@@ -7,7 +7,7 @@
 @section('main-content')
 <div class="container">
 
-    <div><a class="btn btn-success" href="#">create</a></div>
+    <div><a class="btn btn-success" href="{{route('Admin.projects.create')}}">create</a></div>
 
 
     <table class="text-center">
