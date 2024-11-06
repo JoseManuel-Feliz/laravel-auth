@@ -61,7 +61,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+
+        $project = Project::findOrFail($id);
+        $project->update($data);
+
+        return redirect()->route('Admin.projects.show', $project->id);
     }
 
     /**
