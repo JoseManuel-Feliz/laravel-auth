@@ -17,7 +17,8 @@ use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/projects', [AdminProjectController::class, 'index'])->name('projects.index');
+Route::get('/admin/projects', [AdminProjectController::class, 'index'])->name('Admin.projects.index');
+Route::get('/admin/projects/{id}', [AdminProjectController::class, 'show'])->name('Admin.projects.show');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
