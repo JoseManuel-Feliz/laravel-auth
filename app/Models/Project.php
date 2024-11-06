@@ -9,10 +9,12 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $filleable = [
+    protected $fillable = [
         'title',
         'status',
-        'description',
-        'Project_start _date'
+        'author',
+        'contributors',
+        'project_start_date',
+        'description'
     ];
 }
