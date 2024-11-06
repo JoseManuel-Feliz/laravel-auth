@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/admin/projects', [AdminProjectController::class, 'index'])->name('Admin.projects.index');
 Route::get('/admin/projects/create', [AdminProjectController::class, 'create'])->name('Admin.projects.create');
+Route::get('/admin/projects/edit{id}', [AdminProjectController::class, 'edit'])->name('Admin.projects.edit');
 Route::get('/admin/projects/{id}', [AdminProjectController::class, 'show'])->name('Admin.projects.show');
 Route::post('/admin/projects', [AdminProjectController::class, 'store'])->name('Admin.projects.store');
 Auth::routes();
