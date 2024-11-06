@@ -7,7 +7,7 @@
 
 
 @section('form-route')
-
+{{route('Admin.projects.store')}}
 @endsection
 
 @section('form-method')
