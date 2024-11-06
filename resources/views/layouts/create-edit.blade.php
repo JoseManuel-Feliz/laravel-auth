@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('page-title','Create')
-
-@section('nav-title', 'Create')
-
 @section('main-content')
 
 <form action="@yield('form-route')" method="POST">
@@ -40,8 +36,8 @@
     @yield('additionals-inputs','')
 
     <div>
-        <button type="submit">@yield('submit-btn-text')</button>
-        <button type="reset">@yield('reset-btn-text')</button>
+        <button type="submit">@yield('submit-btn-text', '')</button>
+        <button type="reset">@yield('reset-btn-text', '')</button>
     </div>
 </form>
 
