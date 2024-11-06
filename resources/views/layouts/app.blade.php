@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
@@ -22,16 +22,16 @@
 
 <body>
     <div id="app">
-        @include('header-partials')
+        @include('partials.header')
 
         <main class="py-4">
             @yield('main-content')
         </main>
     </div>
 
-    @include('footer-partials')
+    @include('partials.footer')
 
-    @yield(aditionals-scripts','')
+    @yield('aditionals-scripts','')
 </body>
 
 </html>
