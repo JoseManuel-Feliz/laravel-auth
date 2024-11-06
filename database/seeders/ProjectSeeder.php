@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
             $newProject->title = $faker->realTextBetween(2, 15);
             $newProject->author = $faker->firstName() . ' ' . $faker->lastName();
             $newProject->status = $faker->boolean();
-            $newProject->Project_start_date = $faker->dateTimeBetween('-5 weeks', 'now');
+            $newProject->project_start_date = $faker->dateTimeBetween('-5 weeks', 'now');
             $newProject->description = $faker->realTextBetween(60, 300);
 
 
