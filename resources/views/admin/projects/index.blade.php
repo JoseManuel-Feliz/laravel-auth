@@ -36,7 +36,7 @@
                 <td><a class="btn btn-secondary" href="{{route('Admin.projects.show',$project->id)}}">show</a></td>
                 <td><a class="btn btn-warning" href="{{route('Admin.projects.edit',$project->id)}}">edit</a></td>
                 <td>
-                    <form action="#" method="POST">
+                    <form action="{{route('Admin.projects.delete',$project->id)}}" method="POST">
                         @csrf
                         {{method_field('DELETE')}}
                         <button class="btn btn-danger" type="submit">delete</button>
