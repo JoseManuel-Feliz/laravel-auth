@@ -15,7 +15,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        return view('admin.projects.index', compact('projects'));
+        return view('Admin.projects.index', compact('projects'));
     }
 
     /**
@@ -26,7 +26,11 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        $project = new Project();
+        return view('Admin.projects.create', compact('project'));
+    }
 
     /**
      * Display the specified resource.
@@ -34,7 +38,7 @@ class ProjectController extends Controller
     public function show(string $id)
     {
         $project = Project::findOrFail($id);
-        return view('admin.projects.show', compact('project'));
+        return view('Admin.projects.show', compact('project'));
     }
 
     /**
