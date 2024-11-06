@@ -23,6 +23,8 @@ Route::get('/admin/projects/edit{id}', [AdminProjectController::class, 'edit'])-
 Route::get('/admin/projects/{id}', [AdminProjectController::class, 'show'])->name('Admin.projects.show');
 Route::put('/admin/projects/{id}', [AdminProjectController::class, 'update'])->name('Admin.projects.update');
 Route::post('/admin/projects', [AdminProjectController::class, 'store'])->name('Admin.projects.store');
+Route::delete('/admin/projects/{id}', [AdminProjectController::class, 'destroy'])->name('Admin.projects.delete');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
