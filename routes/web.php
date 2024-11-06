@@ -21,6 +21,7 @@ Route::get('/admin/projects', [AdminProjectController::class, 'index'])->name('A
 Route::get('/admin/projects/create', [AdminProjectController::class, 'create'])->name('Admin.projects.create');
 Route::get('/admin/projects/edit{id}', [AdminProjectController::class, 'edit'])->name('Admin.projects.edit');
 Route::get('/admin/projects/{id}', [AdminProjectController::class, 'show'])->name('Admin.projects.show');
+Route::put('/admin/projects/{id}', [AdminProjectController::class, 'update'])->name('Admin.projects.update');
 Route::post('/admin/projects', [AdminProjectController::class, 'store'])->name('Admin.projects.store');
 Auth::routes();
 
