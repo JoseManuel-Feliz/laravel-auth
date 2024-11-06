@@ -8,6 +8,7 @@
 
 @section('form-route')
 
+{{route('Admin.projects.update',$project->id)}}
 @endsection
 
 @section('form-method')
