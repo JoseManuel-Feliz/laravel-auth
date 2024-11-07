@@ -32,7 +32,14 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => ['required', 'string', 'min:3', 'max:40'],
+            'status' => ['required', 'boolean'],
+            'author' => ['required', 'string', 'min:3', 'max:30'],
+            'contributors' => ['required', 'string', 'min:3', 'max:150'],
+            'project_start_date' => ['required', 'date'],
+            'description' => ['required', 'string', 'min:3', 'max:2000']
+        ]);
 
         $project = Project::create($data);
         return redirect()->route('Admin.projects.show', $project->id);
@@ -61,7 +68,14 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => ['required', 'string', 'min:3', 'max:40'],
+            'status' => ['required', 'boolean'],
+            'author' => ['required', 'string', 'min:3', 'max:30'],
+            'contributors' => ['required', 'string', 'min:3', 'max:150'],
+            'project_start_date' => ['required', 'date'],
+            'description' => ['required', 'string', 'min:3', 'max:2000']
+        ]);
 
         $project = Project::findOrFail($id);
         $project->update($data);
