@@ -79,4 +79,8 @@ class ProjectController extends Controller
         $project->delete();
         return redirect()->route('Admin.projects.index');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
