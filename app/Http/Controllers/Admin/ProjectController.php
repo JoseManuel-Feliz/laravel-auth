@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUpdateProjectRequest;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -30,7 +31,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUpdateProjectRequest $request)
+    public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
 
@@ -59,7 +60,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreUpdateProjectRequest $request, string $id)
+    public function update(UpdateProjectRequest $request, string $id)
     {
         $data = $request->validated();
 
