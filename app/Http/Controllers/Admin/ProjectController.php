@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -30,16 +30,9 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProjectRequest $request)
     {
-        $data = $request->validate([
-            'title' => ['required', 'string', 'min:3', 'max:40'],
-            'status' => ['required', 'boolean'],
-            'author' => ['required', 'string', 'min:3', 'max:30'],
-            'contributors' => ['required', 'string', 'min:3', 'max:150'],
-            'project_start_date' => ['required', 'date'],
-            'description' => ['required', 'string', 'min:3', 'max:2000']
-        ]);
+        $data = $request->validated();
 
         $project = Project::create($data);
         return redirect()->route('Admin.projects.show', $project->id);
@@ -66,16 +59,9 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateProjectRequest $request, string $id)
     {
-        $data = $request->validate([
-            'title' => ['required', 'string', 'min:3', 'max:40'],
-            'status' => ['required', 'boolean'],
-            'author' => ['required', 'string', 'min:3', 'max:30'],
-            'contributors' => ['required', 'string', 'min:3', 'max:150'],
-            'project_start_date' => ['required', 'date'],
-            'description' => ['required', 'string', 'min:3', 'max:2000']
-        ]);
+        $data = $request->validated();
 
         $project = Project::findOrFail($id);
         $project->update($data);
