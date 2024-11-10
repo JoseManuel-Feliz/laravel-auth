@@ -16,7 +16,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        return view('Admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProjectController extends Controller
     public function create()
     {
         $project = new Project();
-        return view('Admin.projects.create', compact('project'));
+        return view('admin.projects.create', compact('project'));
     }
 
     /**
@@ -36,7 +36,7 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $project = Project::create($data);
-        return redirect()->route('Admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->id);
     }
 
     /**
@@ -45,7 +45,7 @@ class ProjectController extends Controller
     public function show(string $id)
     {
         $project = Project::findOrFail($id);
-        return view('Admin.projects.show', compact('project'));
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
@@ -54,7 +54,7 @@ class ProjectController extends Controller
     public function edit(string $id)
     {
         $project = Project::findOrFail($id);
-        return view('Admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->update($data);
 
-        return redirect()->route('Admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->id);
     }
 
     /**
@@ -77,7 +77,7 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         $project->delete();
-        return redirect()->route('Admin.projects.index');
+        return redirect()->route('admin.projects.index');
     }
     public function __construct()
     {
