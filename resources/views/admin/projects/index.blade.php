@@ -7,7 +7,7 @@
 @section('main-content')
 <div class="container">
 
-    <div><a class="btn btn-success" href="{{route('Admin.projects.create')}}">create</a></div>
+    <div><a class="btn btn-success" href="{{route('admin.projects.create')}}">create</a></div>
 
 
     <table class="text-center">
@@ -33,10 +33,10 @@
                 <td>{{$project->contributors}}</td>
                 <td>{{$project->project_start_date}}</td>
                 <td>{{Str::words($project->description,3,'...')}}</td>
-                <td><a class="btn btn-secondary" href="{{route('Admin.projects.show',$project->id)}}">show</a></td>
-                <td><a class="btn btn-warning" href="{{route('Admin.projects.edit',$project->id)}}">edit</a></td>
+                <td><a class="btn btn-secondary" href="{{route('admin.projects.show',$project->id)}}">show</a></td>
+                <td><a class="btn btn-warning" href="{{route('admin.projects.edit',$project->id)}}">edit</a></td>
                 <td>
-                    <form action="{{route('Admin.projects.delete',$project->id)}}" method="POST">
+                    <form action="{{route('admin.projects.delete',$project->id)}}" method="POST">
                         @csrf
                         {{method_field('DELETE')}}
                         <button class="btn btn-danger" type="submit">delete</button>
