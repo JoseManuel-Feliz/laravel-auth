@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('author', 30)->nullable(false);
-            $table->string('contributors', 150)->nullable(false);
+            $table->string('author', 30)->nullable(false)->after('title');
+            $table->string('contributors', 150)->nullable(false)->after('author');
         });
     }
 
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            //
+            $table->dropColumn(['author', 'contributors']);;
         });
     }
 };
