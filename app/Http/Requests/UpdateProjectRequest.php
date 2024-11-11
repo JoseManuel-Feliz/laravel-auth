@@ -21,13 +21,14 @@ class UpdateProjectRequest extends FormRequest
      */
     public function rules(): array
     {
+        /* TODO refactoring all request data  */
         return [
-            'title' => ['required', 'string', 'min:3', 'max:40'],
-            'status' => ['required', 'boolean'],
-            'author' => ['required', 'string', 'min:3', 'max:30'],
-            'contributors' => ['required', 'string', 'min:3', 'max:150'],
-            'project_start_date' => ['required', 'date'],
-            'description' => ['required', 'string', 'min:3', 'max:2000']
+            'project_title' => ['required', 'string', 'min:3', 'max:40'],
+            'launch_date' => ['required', 'date'],
+            'project_status' => ['required', 'boolean'],
+            'repository_url' => ['required', 'url'],
+            'project_thumbnail' => ['required', 'string', 'min:3', 'max:150'],
+            'project_summary' => ['required', 'string', 'min:3', 'max:2000']
         ];
     }
 
