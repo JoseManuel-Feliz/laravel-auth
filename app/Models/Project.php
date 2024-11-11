@@ -10,11 +10,11 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'status',
-        'author',
-        'contributors',
-        'project_start_date',
-        'description'
+        'project_title',
+        'launch_date',
+        'project_status',
+        'project_thumbnail',
+        'repository_url',
+        'project_summary',
     ];
 }
