@@ -10,29 +10,30 @@
     <div><a class="btn btn-success" href="{{route('admin.projects.create')}}">create</a></div>
 
 
-    <table class="text-center">
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Author</th>
-                <th>Contributors</th>
+                <th>Project title</th>
                 <th>Project date</th>
+                <th>Project status</th>
+                <th>Link repository</th>
+                <th>Image url</th>
                 <th>Description</th>
                 <th colspan="3">Btns</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-group-divider">
             <tr>
 
                 @forelse($projects as $project)
 
-                <td>{{$project->title}}</td>
-                <td>{{$project->status}}</td>
-                <td>{{$project->author}}</td>
-                <td>{{$project->contributors}}</td>
-                <td>{{$project->project_start_date}}</td>
-                <td>{{Str::words($project->description,3,'...')}}</td>
+
+                <td>{{$project->project_title}}</td>
+                <td>{{$project->launch_date}}</td>
+                <td>{{$project->project_status}}</td>
+                <td>{{$project->repository_url}}</td>
+                <td>{{$project->project_thumbnail}}</td>
+                <td>{{Str::words($project->project_summary,5,'...')}}</td>
                 <td><a class="btn btn-secondary" href="{{route('admin.projects.show',$project->id)}}">show</a></td>
                 <td><a class="btn btn-warning" href="{{route('admin.projects.edit',$project->id)}}">edit</a></td>
                 <td>
