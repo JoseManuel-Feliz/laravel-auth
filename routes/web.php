@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::name('Guest.')->group(function () {
+Route::name('guest.')->group(function () {
     Route::get('/projects', [GuestProjectController::class, 'index'])->name('projects.index');
     Route::get('/projects/{id}', [GuestProjectController::class, 'show'])->name('projects.show');
 });
