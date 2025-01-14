@@ -51,9 +51,9 @@
         <td>{{Str::words($project->project_summary,5,'...')}}</td>
         <div>
             <label for="description">Description</label>
-            <input type="text" name="description" id="description"
+            <input type="text" name="project_summary" id="description"
                 value="{{old('project_summary',$project->project_summary)}}">
-            @error('description')
+            @error('project_summary')
             <div>{{$message}}</div>
             @enderror
         </div>
